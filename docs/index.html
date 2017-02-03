@@ -3,22 +3,22 @@
 <meta charset="utf-8">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-  var getCategoryL = function () {
+  	var getCategoryL = function () {
     return $.ajax({
  	url: 'ho',
-        type: "GET",
+		type: "GET",
         dataType: 'json',
-    }).done(function (data) {
-    	console.log(data);
-    }).fail(function(){
-    	console.log('err');
+    }).then(function (data) {
+		var kakougo = data;
+	    // 加工処理
+		return kakougo;
     });
 }
 
 var categoryList = getCategoryL();
 categoryList.then(function(data) {
 	console.log('呼び出し先', data);
-}, function() { console.log('err')});
+}).fail(function() { console.log('err')});
 </script>
 </head>
 <body>
