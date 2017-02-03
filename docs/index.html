@@ -5,7 +5,7 @@
 <script>
     var getCategoryL = function () {
     return $.ajax({
-        url: 'ho',
+        url: 'https://api-sapporo.odcity.org/api/v1/places?rdf:type=ug:Poi&lon=141.3506029&lat=43.068516&radius=3',
         type: "GET",
         dataType: 'json',
     }).then(function (data) {
